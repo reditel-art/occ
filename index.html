@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Complete Challenge</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="A2 Challenge">
+<meta name="theme-color" content="#0B1240">
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(160deg,#0B1240,#24145E);color:#fff;font:16px/1.5 system-ui,Segoe UI,Arial;text-align:center}
+  img{width:120px;height:120px;border-radius:28px;box-shadow:0 0 30px rgba(125,243,255,.5)}
+  a{display:inline-block;margin-top:18px;padding:12px 22px;border-radius:12px;background:linear-gradient(90deg,#6D5BFF,#9B6BFF);color:#fff;text-decoration:none;font-weight:700}
+  p{color:#C9CDF5;max-width:340px;margin:12px auto 0}
+</style>
+</head>
+<body>
+<div>
+  <img src="icon-512.png" alt="">
+  <h1 style="margin:14px 0 0;font-size:1.4rem">Online Complete Challenge</h1>
+  <a id="go" href="#">Otevřít aplikaci</a>
+  <p id="tip">Tip: přidej si tuto stránku na plochu telefonu – bude mít vlastní ikonu.</p>
+</div>
+<script>
+  /* ⬇⬇ SEM VLOŽTE ADRESU APLIKACE (končí na /exec) ⬇⬇ */
+  var APP_URL = 'https://script.google.com/a/macros/zspbtrinec.cz/s/AKfycbyMAuTk-grX63yG6sZoPs3RPx5frmfGzW3x_sUCwpCok2iLhDWBVZCSDqEc9p4hKciVDQ/exec';
+  /* ⬆⬆ ------------------------------------------- ⬆⬆ */
+  document.getElementById('go').href = APP_URL;
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  if (standalone || location.search.indexOf('go') >= 0) location.replace(APP_URL);
+</script>
+</body>
+</html>
